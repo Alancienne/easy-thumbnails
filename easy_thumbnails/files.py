@@ -455,7 +455,7 @@ class Thumbnailer(File):
                 os.path.splitext(filename))
         filename = '%s%s' % (self.thumbnail_prefix, filename)
 
-        return os.path.join(basedir, path, subdir, filename)
+        return os.path.normpath(os.path.join(basedir, path, subdir, filename))
 
     def get_existing_thumbnail(self, thumbnail_options, high_resolution=False):
         """
